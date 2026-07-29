@@ -15,7 +15,7 @@ jobs:
           flutter-version: '3.24.0'
           channel: 'stable'
       - name: Générer les fichiers natifs Android
-        run: flutter create --platforms=android .
+        run: flutter create --platforms=android --project-name keyla_point_ar .
       - name: Installer les dépendances
         run: flutter pub get
       - name: Compiler l'APK (release)
