@@ -18,6 +18,10 @@ jobs:
           channel: 'stable'
       - name: Générer les fichiers natifs Android
         run: flutter create --platforms=android --project-name keyla_point_ar .
+      - name: Configurer le plugin Google Services dans Gradle
+        run: |
+          sed -i '/id("org.jetbrains.kotlin.android")/a\    id("com.google.gms.google-services") version "4.4.2" apply false' android/settings.gradle.kts
+          sed -i '/id("com.android.application")/a\    id("com.google.gms.google-services")' android/app/build.gradle.kts
       - name: Ajouter google-services.json
         run: echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > android/app/google-services.json
       - name: Installer les dépendances
