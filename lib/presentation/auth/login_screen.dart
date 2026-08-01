@@ -1,4 +1,4 @@
-setStatete 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:keyla_point_ar/core/theme/app_theme.dart';
 import 'package:keyla_point_ar/presentation/shared/providers/core_providers.dart';
