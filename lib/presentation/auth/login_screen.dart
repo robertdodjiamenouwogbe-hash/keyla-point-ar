@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+setStatete 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:keyla_point_ar/core/theme/app_theme.dart';
 import 'package:keyla_point_ar/presentation/shared/providers/core_providers.dart';
@@ -31,7 +31,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       // La redirection vers le bon tableau de bord est gérée par
       // app_router.dart en fonction du rôle de l'utilisateur connecté.
     } catch (e) {
-      setState(() => _erreur = 'Identifiant ou mot de passe incorrect');
+  setState(() => _erreur = e.toString());
     } finally {
       if (mounted) setState(() => _chargement = false);
     }
