@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:keyla_point_ar/core/router/app_router.dart';
 import 'package:keyla_point_ar/core/theme/app_theme.dart';
@@ -17,6 +18,7 @@ Future<void> main() async {
     try {
       await initializeDateFormatting('fr_FR', null);
       await Firebase.initializeApp();
+      FirebaseFirestore.instance.settings = const Settings(persistenceEnabled: true, sslEnabled: true);
       runApp(const ProviderScope(child: KeylaPointArApp()));
     } catch (e, stack) {
       runApp(_ErrorApp(error: e.toString(), stack: stack.toString()));
